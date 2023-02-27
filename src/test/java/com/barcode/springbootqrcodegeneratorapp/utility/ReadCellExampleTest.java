@@ -31,7 +31,7 @@ class ReadCellExampleTest {
     {
         val=2;
     }
-    
+
 
     @Test
     void readCellData() throws Exception {
