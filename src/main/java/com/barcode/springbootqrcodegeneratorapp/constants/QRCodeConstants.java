@@ -2,7 +2,7 @@ package com.barcode.springbootqrcodegeneratorapp.constants;
 
 public class QRCodeConstants {
 
-    public static final String BASE_URL="https://trovity.com/";
+    public static final String BASE_URL="app.trovity.com/individual/dashboard/qrReport/?id=";
 
     /* ApiErrorRespone class constants */
     public static final String DATE_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";

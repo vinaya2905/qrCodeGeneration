@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 
 import static com.barcode.springbootqrcodegeneratorapp.constants.QRCodeConstants.*;
@@ -28,8 +27,9 @@ public class QRCodeController implements IQRController {
     public ApiResponse<Void> genrateAndDownloadQRCode(
             @RequestParam(required = true,name="id") int id,
             @RequestParam(required=true,name="width") Integer width,
-            @RequestParam(required = true,name="height") Integer height){
-        qrCodeGenerator.generate(id,width,height,propertiesConfiguration.getQrcodeImagepath());
+            @RequestParam(required = true,name="height") Integer height,
+            @RequestParam(required = true,name = "col")int col){
+        qrCodeGenerator.generate(id,width,height,propertiesConfiguration.getQrcodeImagepath(),col);
         return new ApiResponse<>(null,true,globalMessageSource.get(MESSAGE));
     }
 
@@ -37,9 +37,11 @@ public class QRCodeController implements IQRController {
     public ApiResponse<Void> generateQRCodeWithMulIds(
             @RequestParam(name="ids") List<Integer> ids,
             @RequestParam(name="width") Integer width,
-            @RequestParam(name="height") Integer height)
+            @RequestParam(name="height") Integer height,
+            @RequestParam(required = true,name = "col")int col)
+
              {
-                 qrCodeGenerator.generate(ids,width,height,propertiesConfiguration.getQrcodeMulti());
+                 qrCodeGenerator.generate(ids,width,height,propertiesConfiguration.getQrcodeMulti(),col);
                  return new ApiResponse<>(null,true,globalMessageSource.get(MESSAGE));
 
     }
