@@ -1,8 +1,5 @@
 package com.barcode.springbootqrcodegeneratorapp.service;
 
-import com.itextpdf.text.DocumentException;
-
-import java.io.IOException;
 import java.util.List;
 
 public interface IQRService {

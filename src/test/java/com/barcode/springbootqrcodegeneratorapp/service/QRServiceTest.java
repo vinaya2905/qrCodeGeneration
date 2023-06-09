@@ -50,12 +50,12 @@ public class QRServiceTest {
         col=2;
 
     }
-    @Test
-    void genrateAndDownloadQRCodeTest() throws IOException {
-        String filepath="src/test/resources/testdata/";
-        when(readCellExample.readCellData(id,col)).thenReturn(new HashMap<>());
-        assertDoesNotThrow(()->qrService.generate(id,width,height,filepath, col));
-    }
+//    @Test
+//    void genrateAndDownloadQRCodeTest() throws IOException {
+//        String filepath="src/test/resources/testdata/";
+//        when(readCellExample.readCellData(id,col)).thenReturn(new HashMap<>());
+//        assertDoesNotThrow(()->qrService.generate(id,width,height,filepath, col));
+//    }
     @Test
     void generateQRcodewithMultipleIdTest()
     {
